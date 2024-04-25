@@ -1,26 +1,25 @@
 package com.ing.zoo;
 
+import com.ing.zoo.interfaces.CanPerformTricks;
+import com.ing.zoo.interfaces.IsCarnivore;
+
 import java.util.Random;
 
-public class Tiger {
-    public String name;
-    public String helloText;
+/**
+ * Represents a Tiger
+ * @author edited by Sander Sekreve
+ */
+
+public class Tiger extends Animal implements IsCarnivore, CanPerformTricks {
     public String eatText;
     public String trick;
 
-    public Tiger()
-    {
+    public Tiger(String name, String helloText, String eatText) {
+        super(name, helloText);
+        this.eatText = eatText;
     }
 
-    public void sayHello()
-    {
-        helloText = "rraaarww";
-        System.out.println(helloText);
-    }
-
-    public void eatMeat()
-    {
-        eatText = "nomnomnom oink wubalubadubdub";
+    public void eatMeat() {
         System.out.println(eatText);
     }
 

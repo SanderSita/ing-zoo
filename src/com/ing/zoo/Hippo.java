@@ -1,23 +1,21 @@
 package com.ing.zoo;
 
-public class Hippo {
-    public String name;
-    public String helloText;
+import com.ing.zoo.interfaces.IsHerbivore;
+
+/**
+ * Represents a Hippo
+ * @author edited by Sander Sekreve
+ */
+
+public class Hippo extends Animal implements IsHerbivore {
     public String eatText;
 
-    public Hippo()
-    {
+    public Hippo(String name, String helloText, String eatText) {
+        super(name, helloText);
+        this.eatText = eatText;
     }
 
-    public void sayHello()
-    {
-        helloText = "splash";
-        System.out.println(helloText);
-    }
-
-    public void eatLeaves()
-    {
-        eatText = "munch munch lovely";
+    public void eatLeaves() {
         System.out.println(eatText);
     }
 }

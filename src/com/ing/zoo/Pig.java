@@ -1,37 +1,36 @@
 package com.ing.zoo;
 
+import com.ing.zoo.interfaces.CanPerformTricks;
+import com.ing.zoo.interfaces.IsCarnivore;
+import com.ing.zoo.interfaces.IsHerbivore;
+
 import java.util.Random;
 
-public class Pig {
-    public String name;
-    public String helloText;
+/**
+ * Represents a Pig
+ * @author edited by Sander Sekreve
+ */
+
+public class Pig extends Animal implements IsCarnivore, IsHerbivore, CanPerformTricks {
     public String eatText;
     public String trick;
 
-    public Pig()
-    {
+    public Pig(String name, String helloText, String eatText) {
+        super(name, helloText);
+        this.eatText = eatText;
     }
 
-    public void sayHello()
-    {
-        helloText = "splash";
-        System.out.println(helloText);
-    }
-
-    public void eatLeaves()
-    {
+    public void eatLeaves() {
         eatText = "munch munch oink";
         System.out.println(eatText);
     }
 
-    public void eatMeat()
-    {
+    public void eatMeat() {
         eatText = "nomnomnom oink thx";
         System.out.println(eatText);
     }
 
-    public void performTrick()
-    {
+    public void performTrick() {
         Random random = new Random();
         int rnd = random.nextInt(2);
         if(rnd == 0)

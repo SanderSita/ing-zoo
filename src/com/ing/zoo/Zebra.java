@@ -1,26 +1,21 @@
 package com.ing.zoo;
 
-import java.util.Random;
+import com.ing.zoo.interfaces.IsHerbivore;
 
-public class Zebra {
-    public String name;
-    public String helloText;
+/**
+ * Represents a Zebra
+ * @author edited by Sander Sekreve
+ */
+
+public class Zebra extends Animal implements IsHerbivore {
     public String eatText;
-    public String trick;
 
-    public Zebra()
-    {
+    public Zebra(String name, String helloText, String eatText) {
+        super(name, helloText);
+        this.eatText = eatText;
     }
 
-    public void sayHello()
-    {
-        helloText = "zebra zebra";
-        System.out.println(helloText);
-    }
-
-    public void eatLeaves()
-    {
-        eatText = "munch munch zank yee bra";
+    public void eatLeaves() {
         System.out.println(eatText);
     }
 }

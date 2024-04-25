@@ -1,23 +1,21 @@
 package com.ing.zoo;
 
-public class Lion {
-    public String name;
-    public String helloText;
+import com.ing.zoo.interfaces.IsCarnivore;
+
+/**
+ * Represents a Lion
+ * @author edited by Sander Sekreve
+ */
+
+public class Lion extends Animal implements IsCarnivore {
     public String eatText;
 
-    public Lion()
-    {
+    public Lion(String name, String helloText, String eatText) {
+        super(name, helloText);
+        this.eatText = eatText;
     }
 
-    public void sayHello()
-    {
-        helloText = "roooaoaaaaar";
-        System.out.println(helloText);
-    }
-
-    public void eatMeat()
-    {
-        eatText = "nomnomnom thx mate";
+    public void eatMeat() {
         System.out.println(eatText);
     }
 }
